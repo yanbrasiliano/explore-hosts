@@ -17,8 +17,13 @@
 #----------------------------------------------------------------------
 # Historic: 
 #
-# v1.0 2021.01.09, Yan Brasiliano:
-# - Initial version of the program. 
+# 	v1.0 2021.01.09, Yan Brasiliano:
+# 		- Initial version of the program. 
+# 
+#	
+#		v1.1 2021.01.21, Yan Brasiliano:
+# 		- Adding verbose function and OS discovery function.  
+#
 # ----------------------------------------------------------------------
 # Tested:
 # 			BASH 5.0.3
@@ -43,6 +48,8 @@ help=$"
 
 -I to find out more about the target.
 
+-a to discovery OS.
+
 -x Exit.
   
 	"
@@ -51,12 +58,13 @@ echo -n "Parameter: " && read input
 
 case $input in
 
--h) echo "$(whois $target)" 											 ;;
--i) echo "$(host $target)" 											 ;;
--e) echo "$(sudo nmap -sS $target)" 							 			 ;;
--I) echo "$(sudo nmap -A $target)" 								 		 ;;
--x) EXIT_KEY=1 													 ;;
-*) echo "ERROR: typed valid parameter!" && exit 1  ;;
+-h) echo "$(whois $target)" 											         ;;
+-i) echo "$(host $target)" 											           ;;
+-e) echo "$(sudo nmap -sS -v $target)" 							 			 ;;
+-I) echo "$(sudo nmap -A -v $target)" 								 		 ;;
+-a) echo "$(sudo nmap -sV -A $target)"										 ;;
+-x) EXIT_KEY=1 													                   ;;
+*) echo "ERROR: typed valid parameter!" && exit 1          ;;
 
 esac
 	
