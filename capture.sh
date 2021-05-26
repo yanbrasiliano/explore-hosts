@@ -59,12 +59,12 @@ echo -n "Parameter: " && read input
 case $input in
 
 -h) echo "$(whois $target)" 											         ;;
--i) echo "$(host $target)" 											           ;;
--e) echo "$(sudo nmap -sS -v $target)" 							 			 ;;
--I) echo "$(sudo nmap -A -v $target)" 								 		 ;;
--a) echo "$(sudo nmap -sV -A $target)"										 ;;
--x) EXIT_KEY=1 													                   ;;
-*) echo "ERROR: typed valid parameter!" && exit 1          ;;
+-i) echo "$(host $target)" 											         ;;
+-e) echo "$(sudo nmap -sS -v $target)" 							 			 	 ;;
+-I) echo "$(sudo nmap -A -v $target)" 								 		 	 ;;
+-a) echo "$(sudo nmap -sV -A $target)"										 	 ;;
+-x) EXIT_KEY=1 													         ;;
+*) echo "ERROR: typed valid parameter!" && exit 1          								 ;;
 
 esac
 	
