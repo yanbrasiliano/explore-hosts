@@ -2,7 +2,7 @@
 #
 # nmap.sh - Automates data collection from hosts with nmap.
 #
-# Site: 							hellolibre.blogspot.com
+# Site: 						www.libresec.me
 # Author: 						Yan Brasiliano Silva Penalva <yanpenabr@gmail.com>
 # Maintenance: 				Yan Brasiliano Silva Penalva <yanpenabr@gmail.com>
 #
